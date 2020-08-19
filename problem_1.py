@@ -1,3 +1,9 @@
+# 
+# Solution to Project Euler problem 1
+# Copyright (c) Parv Patel. All rights reserved.
+# 
+# 
+
 nums = 1000
 prod = 0
 

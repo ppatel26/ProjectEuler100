@@ -1,0 +1,17 @@
+# OS generated files #
+*.DS_Store
+*.Trashes
+
+# Logs #
+*.log
+
+# IDE #
+*.idea
+*.vscode
+
+# Generated files #
+/web-app/WEB-INF
+build/
+*.[oa]
+*.out
+*.pyc

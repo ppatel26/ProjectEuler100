@@ -1,4 +1,8 @@
-u_end = 20
+# 
+# Solution to Project Euler problem 5
+# Copyright (c) Parv Patel. All rights reserved.
+# 
+# 
 
 # Brute Force Method (Takes too long!) 
 '''
@@ -28,18 +32,23 @@ def factorial(num):
         facto = facto*i
     return facto
 
-facto = factorial(u_end)
 
-pots = []
-count = u_end
-while count!=0:
-    check = all([facto%i==0 for i in range(u_end,0,-1)])
-    if check:
-        pots.append(facto)
-        facto = facto/count
-        count = count - 1
-    else:
-        facto = pots[-1]/count
-        count = count - 1
+# (1 - u_end) : defines range of numbers
+def smallest_number_divisible(u_end):
+    facto = factorial(u_end)  # start with the factorial of end number (caps the sample space)
+    pots = []
+    count = u_end
+    while count!=0:
+        check = all([facto%i==0 for i in range(u_end,0,-1)]) # update the facto=number and check if divisible by all numbers from (1-u_end)
+        if check:
+            pots.append(facto)
+            facto = facto/count
+            count = count - 1
+        else:
+            facto = pots[-1]/count
+            count = count - 1
+    
+    print(min(pots))
 
-print(min(pots))
+if __name__ == "__main__":  
+    smallest_number_divisible(20)
